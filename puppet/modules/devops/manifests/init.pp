@@ -39,7 +39,7 @@ class devops(
     template            => 'apache/virtualhost/vhost.conf.erb',
   }
 
-  apt::ppa { 'ppa:ondrej/php5':
+  apt::ppa { 'ppa:ondrej/php5-oldstable':
     before  => Class['php'],
   }
 
