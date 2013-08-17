@@ -7,6 +7,8 @@ Vagrant.configure("2") do |config|
 	 
 	config.vm.synced_folder "./", "/vagrant", id: "vagrant-root"
 	
+	config.vm.synced_folder "./www", "/vagrant/www", owner: "www-data", group: "www-data"
+
     config.vm.provision :puppet do |puppet|
         puppet.manifests_path = "puppet/manifests"
         puppet.module_path = "puppet/modules"
