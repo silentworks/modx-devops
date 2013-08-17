@@ -14,4 +14,4 @@ Once Vagrant provisioning is successful, you can then navigate to http://192.168
 
 - username: vagrant
 - password: vagrant
-- database name: modx
+- database name: default

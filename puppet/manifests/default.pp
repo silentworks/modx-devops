@@ -1,5 +1,5 @@
 $mysql_host = 'localhost'
-$mysql_db   = 'modx'
+$mysql_db   = 'default'
 $mysql_user = 'vagrant'
 $mysql_pass = 'vagrant'
 
