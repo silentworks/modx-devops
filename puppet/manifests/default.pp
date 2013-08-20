@@ -3,8 +3,6 @@ $mysql_db   = 'default'
 $mysql_user = 'vagrant'
 $mysql_pass = 'vagrant'
 
-$docroot = '/vagrant/www/'
-
 class { "devops":
     mysql_host => $mysql_host,
     mysql_db => $mysql_db,
@@ -50,7 +48,7 @@ exec { 'build_transport':
                 File['/vagrant/www/_build/build.properties.php'] ],
 }
 
-file {['${docroot}core/cache', '${docroot}core/export', '${docroot}core/packages']:
+file {["${docroot}core/cache", "${docroot}core/export", "${docroot}core/packages"]:
     ensure  => directory,
     owner   => 'www-data',
     group   => 'www-data',
