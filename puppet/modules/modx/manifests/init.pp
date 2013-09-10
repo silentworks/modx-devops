@@ -17,7 +17,7 @@ class modx {
 
     exec { 'modx_git':
         cwd    => '/vagrant',
-        command => 'git clone https://github.com/modxcms/revolution.git www',
+        command => 'git clone https://github.com/silentworks/revolution.git www',
         onlyif  => 'test ! -d /vagrant/www',
         require => Package['git']
     }
@@ -58,6 +58,16 @@ class modx {
         content => template('modx/config.inc.php.erb'),
         ensure  => present,
         require => Exec['build_transport'],
+    }
+
+    # Import a MySQL database for a basic modx website.
+    file{
+        "/tmp/modx-default.sql":
+        source=>"puppet:///modules/modx/default.sql"
+    }
+
+    exec{"load-db":
+        command=>"/usr/bin/mysql -u $mysql_user -p$mysql_pass $mysql_db < /tmp/modx-default.sql"
     }
 
     # Set directory permissions

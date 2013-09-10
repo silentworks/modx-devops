@@ -20,7 +20,7 @@ class devops(
   }
 
   package { ['python-software-properties']:
-    ensure  => 'installed',
+    ensure  => present,
     require => Exec['apt-get update'],
   }
 
