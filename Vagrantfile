@@ -11,11 +11,15 @@ Vagrant.configure("2") do |config|
         puppet.facter = { 
             "fqdn" => "modx.local", 
             "docroot" => '/vagrant/www/',
-            "vagrant" => "1"
+            "repo" => "https://github.com/modxcms/revolution.git"
         }
         puppet.manifests_path = "puppet/manifests"
         puppet.module_path = "puppet/modules"
         puppet.options = ['--verbose']
+    end
+
+    config.vm.provider "virtualbox" do |v|
+        v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant-root", "1"]
     end
 
 end

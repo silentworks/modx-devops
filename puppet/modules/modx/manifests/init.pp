@@ -17,7 +17,7 @@ class modx {
 
     exec { 'modx_git':
         cwd    => '/vagrant',
-        command => 'git clone https://github.com/silentworks/revolution.git www',
+        command => "git clone ${repo} www",
         onlyif  => 'test ! -d /vagrant/www',
         require => Package['git']
     }

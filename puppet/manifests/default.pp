@@ -1,4 +1,4 @@
 class {"modx":}
 class{"grunt::install":
-    require => Exec['modx_git']
+    require => Class[ 'modx' ]
 }
