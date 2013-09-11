@@ -41,7 +41,7 @@ Once Vagrant provisioning is successful, you can then navigate to http://192.168
 First, clone a copy of this git repo by running:
 
 ```bash
-git clone -b manager git://github.com/silentworks/modx-devops.git
+git clone git://github.com/silentworks/modx-devops.git
 ```
 
 Open this project in your favourite TextEditor/IDE, then edit the Vagrantfile, change repo to your fork of the 
@@ -62,7 +62,7 @@ fsutil behavior set SymlinkEvaluation L2L:1 R2R:1 L2R:1 R2L:1
 Now we do:
 
 ```bash
-cd manager
+cd modx-devops
 vagrant up
 ```
 
