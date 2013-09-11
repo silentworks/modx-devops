@@ -1,4 +1,17 @@
-# Vagrant setup for MODX with Apache, PHP, MySQL, xdebug
+# Vagrant setup for MODX
+
+### Manager Contribution Workflow for Frontend Developers
+
+This setup will provide you with a Vagrant setup for MODX with Apache, PHP, MySQL and xdebug. This allows you to contribute to the Manager UI, which currently uses
+GruntJS build tool along with SASS and a few other third party libraries. The aim of this repository is to serve as an alternative to the [official setup](https://github.com/modxcms/revolution/tree/develop/_build/templates/default#what-you-need) which requires installing dependencies at the system level.
+
+This repository was created to bundle all dependencies into a Vagrant (VirtualBox) setup.
+
+Before we get started, you will require only 2 dependencies.
+
+[Vagrant][] and [VirtualBox][]
+
+Once you have these two setup, you can proceed to the next steps.
 
 You can install this repository by running the following commands:
 
@@ -22,19 +35,7 @@ Once Vagrant provisioning is successful, you can then navigate to http://192.168
 - database name: default
 
 
-### Manager Contribution Workflow for Frontend Developers
 
-This setup will provide you with a simple setup in order to contribute to the Manager UI, the project is currently using
-GruntJS build tool along with SASS and a few other third party libraries. The aim of this repository is to make this workflow
-a much easier one than it currently is.
-
-This repository was created to bundle all dependencies into a Vagrant (VirtualBox) setup.
-
-Before we get started, you will require only 2 dependencies.
-
-[Vagrant][] and [VirtualBox][]
-
-Once you have these two setup, you can proceed to the next steps.
 
 #### Step 1
 First, clone a copy of this git repo by running:
@@ -57,7 +58,7 @@ You will need to open your cmd prompt in Administrator mode and run the followin
 fsutil behavior set SymlinkEvaluation L2L:1 R2R:1 L2R:1 R2L:1
 ```
 
-#### Step 3 
+#### Step 2
 Now we do:
 
 ```bash
@@ -65,7 +66,7 @@ cd manager
 vagrant up
 ```
 
-#### Step 4
+#### Step 3
 
 Once all this is done and the Vagrant box is up and running, you will need to ssh into the box and start using the grunt workflow.
 
