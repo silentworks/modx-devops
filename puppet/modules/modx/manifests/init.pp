@@ -60,16 +60,6 @@ class modx {
         require => Exec['build_transport'],
     }
 
-    # Import a MySQL database for a basic modx website.
-    file{
-        "/tmp/modx-default.sql":
-        source=>"puppet:///modules/modx/default.sql"
-    }
-
-    exec{"load-db":
-        command=>"/usr/bin/mysql -u $mysql_user -p$mysql_pass $mysql_db < /tmp/modx-default.sql"
-    }
-
     # Set directory permissions
     file {["${docroot}core/cache", "${docroot}core/export", "${docroot}core/packages"]:
         ensure  => directory,

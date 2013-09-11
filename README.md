@@ -45,7 +45,7 @@ cd modx-devops
 vagrant up
 ```
 
-You can now navigate to http://192.168.33.121/manager in your web browser.
+You can now navigate to http://192.168.33.121/setup/ in your web browser.
 
 #### Step 4
 
@@ -71,11 +71,6 @@ grunt
 And thats it, go on and edit your SASS files and watch grunt run each time you make a save.
 
 ## Credentials
-#### Manager Login Info
-
-- username: vagrant
-- password: vagrant
-
 #### Database Info
 
 - username: vagrant
