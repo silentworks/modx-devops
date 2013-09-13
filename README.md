@@ -23,8 +23,8 @@ git clone git://github.com/silentworks/modx-devops.git
 ```
 
 #### 2. Update Vagrantfile
-Open this project in your favourite TextEditor/IDE, then edit the Vagrantfile, change repo to your fork of the 
-MODX repository. This step is necessary in order to send in Pull Requests.
+Open this project in your favourite TextEditor/IDE, then edit the __Vagrantfile__, change repo to your fork of the 
+MODX repository. __This step is necessary in order to send in Pull Requests.__
 
 __Windows users only, OSX users skip to [step 3](#Create Vagrant Environment).__
 
@@ -55,7 +55,6 @@ ssh into the box so you can use things like the [grunt workflow commands][grunt 
 ```bash
 vagrant ssh
 cd /vagrant/www/_build/templates/default
-npm install
 ```
 
 Now lets get Bower dependencies:
@@ -80,11 +79,6 @@ And thats it, go on and edit your SASS files and watch grunt run each time you m
 - username: vagrant
 - password: vagrant
 - database name: default
-
-#### Manager User
-
-- username: vagrant
-- password: vagrant
 
 
 [Vagrant]: http://www.vagrantup.com/

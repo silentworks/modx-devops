@@ -52,14 +52,6 @@ class modx {
                     File['/vagrant/www/_build/build.properties.php'] ],
     }
 
-
-    # Move config file
-    file { '/vagrant/www/core/config/config.inc.php':
-        content => template('modx/config.inc.php.erb'),
-        ensure  => present,
-        require => Exec['build_transport'],
-    }
-
     # Set directory permissions
     file {["${docroot}core/cache", "${docroot}core/export", "${docroot}core/packages"]:
         ensure  => directory,
