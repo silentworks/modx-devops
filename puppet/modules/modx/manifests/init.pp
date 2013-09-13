@@ -63,8 +63,8 @@ class modx {
     # Set directory permissions
     file {["${docroot}core/cache", "${docroot}core/export", "${docroot}core/packages"]:
         ensure  => directory,
-        owner   => 'www-data',
-        group   => 'www-data',
+        owner   => 'vagrant',
+        group   => 'vagrant',
         mode    => '0777',
         recurse => true,
         require => Exec['modx_git'],

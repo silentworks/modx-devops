@@ -87,5 +87,16 @@ class devops(
     notify  => Service['apache2'],
   }
 
+  # Change Apache user to vagrant
+  file{ '/tmp/apacheuser.sh':
+      source => 'puppet:///modules/devops/apacheuser.sh'
+  }
+
+  exec{ 'change apache user':
+      command => 'bash /tmp/apacheuser.sh',
+      require => Class['php'],
+      notify  => Service['apache2'],
+  }
+
   class { 'devops::composer': }
 }

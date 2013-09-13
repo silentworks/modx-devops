@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
     config.vm.network :private_network, ip: "192.168.33.121"
      
-    config.vm.synced_folder "./", "/vagrant", id: "vagrant-root", owner: "www-data", group: "www-data"  
+    config.vm.synced_folder "./", "/vagrant", id: "vagrant-root"  
 
     config.vm.provision :puppet do |puppet|
         puppet.facter = { 
