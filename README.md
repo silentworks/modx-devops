@@ -50,7 +50,6 @@ _Note: `vagrant up` can take several minutes to initially complete. This is esti
 
 You can now navigate to http://192.168.33.121/setup/ in your web browser.
 
-## Credentials
 #### Database Info
 
 - username: vagrant
@@ -81,6 +80,12 @@ grunt
 _Note: grunt is now watching files for changes. When Sass files are changed CSS will automatically be generated.<br>Install the LiveReload [browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-) to inject CSS changes without a page refresh._
 
 And thats it, go on and edit your SASS files and watch grunt run each time you make a save.
+
+#### PHPMyAdmin
+
+You can access your database through PHPMyAdmin using the url below:
+
+http://192.168.33.121:8000
 
 ## Vagrant related info
 
