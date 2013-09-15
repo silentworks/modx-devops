@@ -26,7 +26,7 @@ git clone git://github.com/silentworks/modx-devops.git
 Open this project in your favourite TextEditor/IDE, then edit the __Vagrantfile__, change repo to your fork of the 
 MODX repository. __This step is necessary in order to send in Pull Requests.__
 
-__Windows users only, OSX users skip to [step 3](#Create Vagrant Environment).__
+__Windows users only, OSX users skip to [step 3](#create-vagrant-environment).__
 
 We are making use of symlink in the project because of the way Grunt works, in order to get this to work on Windows
 you will need to do some extra steps first.
@@ -44,11 +44,20 @@ Simply spin up a vagrant instance:
 cd modx-devops
 vagrant up
 ```
-_Note: `vagrant up` can take several minutes to initially complete._
+_Note: `vagrant up` can take several minutes to initially complete. This is estimated to 2 - 10 minutes._
+
+#### 4. Install MODX
 
 You can now navigate to http://192.168.33.121/setup/ in your web browser.
 
-#### 4. Use SSH
+## Credentials
+#### Database Info
+
+- username: vagrant
+- password: vagrant
+- database name: default
+
+#### 5. Use SSH
 
 ssh into the box so you can use things like the [grunt workflow commands][grunt workflow].
 
@@ -73,12 +82,27 @@ _Note: grunt is now watching files for changes. When Sass files are changed CSS 
 
 And thats it, go on and edit your SASS files and watch grunt run each time you make a save.
 
-## Credentials
-#### Database Info
+## Vagrant related info
 
-- username: vagrant
-- password: vagrant
-- database name: default
+To completely shutdown the vagrant box:
+
+```bash
+vagrant destroy
+```
+
+To keep the current state of the vagrant box but stop it from using your processor resources:
+
+```bash
+vagrant suspend
+```
+
+If you make changes to the Vagrantfile while the vagrant box is active you will need to do:
+
+```bash
+vagrant reload
+```
+
+for the changes to take effect.
 
 
 [Vagrant]: http://www.vagrantup.com/
